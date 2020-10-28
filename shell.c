@@ -36,9 +36,9 @@ void type_prompt()
     getcwd(cwd, sizeof(cwd));
 
     // Print prompt
-    printf("\033[0;31m"); // Color RED
+    printf("\033[0;31m"); // Color Red
     printf("\n[my_shell][%s][%s]", user, cwd);
-    printf("\033[0;34m~"); // Color BLUE
+    printf("\033[0;34m~"); // Color Blue
     printf("\033[0m$ "); // Reset Color to Default
 }
 
@@ -81,7 +81,7 @@ int isRedirection()
     if(numberOfCommands <= 1)
         return 0;
 
-    if(strcmp(commands[numberOfCommands - 2], "<")   == 0)
+    if(strcmp(commands[numberOfCommands - 2], "<")  == 0)
         return 1;
     if(strcmp(commands[numberOfCommands - 2], ">")  == 0)
         return 2;
@@ -118,7 +118,6 @@ void executeSingleCommand()
 
 void executePipeCommands(int pipeNumber)
 {
-
     if(pipeNumber == 1)
     {
         int fd[2];
@@ -162,8 +161,7 @@ void executePipeCommands(int pipeNumber)
                     break;
                 }
                 
-            }
-            
+            }            
             execv(binaryPath, args); 
         } 
         else 
@@ -189,8 +187,6 @@ void executePipeCommands(int pipeNumber)
 
                 args[i] = strdup(commands[i]);
             }
-
-            //execlp("ls", "ls", NULL);
             execv(binaryPath, args);
         }
     }
@@ -296,7 +292,6 @@ void executeCommands()
         case 3: // double output redirection (append)
             executeDoubleOutputRedirection();
             break;
-
     }
 }
 
@@ -339,5 +334,3 @@ int main()
     
     return 0;
 }
-
-
