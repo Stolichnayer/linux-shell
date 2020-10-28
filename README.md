@@ -12,4 +12,5 @@ A simple C linux shell implementation with redirections & pipelines.
 
 ![Screenshot](https://github.com/Stolichnayer/linux-shell/blob/main/screenshot.png)
 
-[TODO - Not Yet implemented] Pipeline for more than 2 commands.
+## TODO
+* Pipeline for more than 2 commands.
