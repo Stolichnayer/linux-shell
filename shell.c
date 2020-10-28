@@ -60,16 +60,16 @@ void getCommands()
     
     int commandIndex = 0;
     while(ptr != NULL)
-	{   
+    {   
         if(commandIndex >= MAX_COMMANDS)
         {
             printf("ERROR: Max Command number exceeded.\n");
             return;
-        }
-
-		commands[commandIndex++] = strdup(ptr);
-		ptr = strtok(NULL, delim);
 	}
+	    
+	commands[commandIndex++] = strdup(ptr);
+	ptr = strtok(NULL, delim);
+    }
 
     // Storing final number of commands to the global variable
     numberOfCommands = commandIndex;
@@ -159,8 +159,7 @@ void executePipeCommands(int pipeNumber)
                     for(j = i + 1; j < numberOfCommands; j++)
                         args[index++] = strdup(commands[j]);                    
                     break;
-                }
-                
+                }                
             }            
             execv(binaryPath, args); 
         } 
