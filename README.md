@@ -10,6 +10,6 @@ A simple C linux shell implementation with redirections & pipelines.
 * Output redirection (Create or append) to file with ">>" after the command.
 * Pipeline of max 2 commands, with "|" between them.
 
-[TODO - Not Yet implemented] Pipeline for more than 2 commands.
-
 ![Screenshot](https://github.com/Stolichnayer/linux-shell/blob/main/screenshot.png)
+
+[TODO - Not Yet implemented] Pipeline for more than 2 commands.
